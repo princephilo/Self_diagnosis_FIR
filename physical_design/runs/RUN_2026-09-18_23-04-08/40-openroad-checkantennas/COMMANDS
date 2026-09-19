@@ -1,0 +1,1 @@
+openroad -exit -no_splash -metrics /Users/balliprincephilomon/Prince/Self_diagnosis_FIR/physical_design/runs/RUN_2026-09-18_23-04-08/40-openroad-checkantennas/or_metrics_out.json /nix/store/ljb503jj13ih6kqgymr6k5ac4k23cps5-python3-3.13.9-env/lib/python3.13/site-packages/librelane/scripts/openroad/antenna_check.tcl

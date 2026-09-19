@@ -1,0 +1,63 @@
+{
+   "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+   "invocation": "stat -json -liberty /Users/balliprincephilomon/Prince/Self_diagnosis_FIR/physical_design/runs/RUN_2026-09-18_23-04-08/tmp/014803a78ce44613ac485b0e64dec335.lib ",
+   "modules": {
+      "\\self_diagnosing_fir": {
+         "num_wires":         487,
+         "num_wire_bits":     548,
+         "num_pub_wires":     23,
+         "num_pub_wire_bits": 82,
+         "num_ports":         16,
+         "num_port_bits":     46,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         512,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 133,
+            "$_AND_": 67,
+            "$_DFF_P_": 12,
+            "$_MUX_": 3,
+            "$_NAND_": 25,
+            "$_NOR_": 20,
+            "$_NOT_": 14,
+            "$_ORNOT_": 15,
+            "$_OR_": 64,
+            "$_SDFFE_PP0N_": 1,
+            "$_SDFF_PP0_": 20,
+            "$_XNOR_": 47,
+            "$_XOR_": 91
+         }
+      }
+   },
+      "design": {
+         "num_wires":         487,
+         "num_wire_bits":     548,
+         "num_pub_wires":     23,
+         "num_pub_wire_bits": 82,
+         "num_ports":         16,
+         "num_port_bits":     46,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         512,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 133,
+            "$_AND_": 67,
+            "$_DFF_P_": 12,
+            "$_MUX_": 3,
+            "$_NAND_": 25,
+            "$_NOR_": 20,
+            "$_NOT_": 14,
+            "$_ORNOT_": 15,
+            "$_OR_": 64,
+            "$_SDFFE_PP0N_": 1,
+            "$_SDFF_PP0_": 20,
+            "$_XNOR_": 47,
+            "$_XOR_": 91
+         }
+      }
+}
+

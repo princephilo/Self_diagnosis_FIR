@@ -1,0 +1,588 @@
+$date
+	Thu Sep 17 02:26:52 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module self_diagnosing_tb $end
+$var wire 10 ! y [9:0] $end
+$var wire 2 " fault_location [1:0] $end
+$var wire 1 # fault_detected $end
+$var wire 1 $ diag_done $end
+$var wire 1 % diag_busy $end
+$var reg 1 & clk $end
+$var reg 4 ' h0 [3:0] $end
+$var reg 4 ( h1 [3:0] $end
+$var reg 4 ) h2 [3:0] $end
+$var reg 4 * h3 [3:0] $end
+$var reg 1 + rst $end
+$var reg 1 , start_diag $end
+$var reg 4 - x [3:0] $end
+$scope module dut $end
+$var wire 1 & clk $end
+$var wire 3 . fault_bit [2:0] $end
+$var wire 1 # fault_detected $end
+$var wire 2 / fault_location [1:0] $end
+$var wire 4 0 h0 [3:0] $end
+$var wire 4 1 h1 [3:0] $end
+$var wire 4 2 h2 [3:0] $end
+$var wire 4 3 h3 [3:0] $end
+$var wire 1 + rst $end
+$var wire 1 , start_diag $end
+$var wire 4 4 x [3:0] $end
+$var wire 10 5 y [9:0] $end
+$var wire 4 6 x3 [3:0] $end
+$var wire 4 7 x2 [3:0] $end
+$var wire 4 8 x1 [3:0] $end
+$var wire 4 9 x0 [3:0] $end
+$var wire 4 : test_x [3:0] $end
+$var wire 8 ; p3 [7:0] $end
+$var wire 8 < p2 [7:0] $end
+$var wire 8 = p1 [7:0] $end
+$var wire 8 > p0 [7:0] $end
+$var wire 4 ? fir_x [3:0] $end
+$var wire 2 @ fault_location_live [1:0] $end
+$var wire 1 A fault_detected_live $end
+$var wire 3 B fault_bit_live [2:0] $end
+$var wire 1 $ diag_done $end
+$var wire 1 % diag_busy $end
+$var reg 3 C fault_bit_reg [2:0] $end
+$var reg 1 D fault_detected_reg $end
+$var reg 2 E fault_location_reg [1:0] $end
+$scope module controller $end
+$var wire 1 & clk $end
+$var wire 1 + rst $end
+$var wire 1 , start_diag $end
+$var parameter 4 F DONE $end
+$var parameter 4 G IDLE $end
+$var parameter 4 H TEST1 $end
+$var parameter 4 I TEST2 $end
+$var parameter 4 J TEST3 $end
+$var parameter 4 K TEST4 $end
+$var parameter 4 L TEST5 $end
+$var parameter 4 M WAIT1 $end
+$var parameter 4 N WAIT2 $end
+$var parameter 4 O WAIT3 $end
+$var parameter 4 P WAIT4 $end
+$var parameter 4 Q WAIT5 $end
+$var reg 1 % diag_busy $end
+$var reg 1 $ diag_done $end
+$var reg 4 R state [3:0] $end
+$var reg 4 S test_x [3:0] $end
+$upscope $end
+$scope module diagnostic $end
+$var wire 1 A fault_detected $end
+$var wire 4 T h0 [3:0] $end
+$var wire 4 U h1 [3:0] $end
+$var wire 4 V h2 [3:0] $end
+$var wire 4 W h3 [3:0] $end
+$var wire 8 X mismatch_p0 [7:0] $end
+$var wire 8 Y mismatch_p1 [7:0] $end
+$var wire 8 Z mismatch_p2 [7:0] $end
+$var wire 8 [ mismatch_p3 [7:0] $end
+$var wire 4 \ x3 [3:0] $end
+$var wire 4 ] x2 [3:0] $end
+$var wire 4 ^ x1 [3:0] $end
+$var wire 4 _ x0 [3:0] $end
+$var wire 8 ` p3 [7:0] $end
+$var wire 8 a p2 [7:0] $end
+$var wire 8 b p1 [7:0] $end
+$var wire 8 c p0 [7:0] $end
+$var wire 1 d fault_p3 $end
+$var wire 1 e fault_p2 $end
+$var wire 1 f fault_p1 $end
+$var wire 1 g fault_p0 $end
+$var wire 2 h fault_location [1:0] $end
+$var wire 3 i fault_bit [2:0] $end
+$var wire 8 j expected_p3 [7:0] $end
+$var wire 8 k expected_p2 [7:0] $end
+$var wire 8 l expected_p1 [7:0] $end
+$var wire 8 m expected_p0 [7:0] $end
+$upscope $end
+$scope module fir_core $end
+$var wire 1 & clk $end
+$var wire 4 n h0 [3:0] $end
+$var wire 4 o h1 [3:0] $end
+$var wire 4 p h2 [3:0] $end
+$var wire 4 q h3 [3:0] $end
+$var wire 1 + rst $end
+$var wire 4 r x [3:0] $end
+$var wire 4 s x0 [3:0] $end
+$var wire 4 t x1 [3:0] $end
+$var wire 4 u x2 [3:0] $end
+$var wire 4 v x3 [3:0] $end
+$var wire 10 w y [9:0] $end
+$var wire 8 x p3 [7:0] $end
+$var wire 8 y p2 [7:0] $end
+$var wire 8 z p1 [7:0] $end
+$var wire 8 { p0 [7:0] $end
+$var reg 4 | x0_reg [3:0] $end
+$var reg 4 } x1_reg [3:0] $end
+$var reg 4 ~ x2_reg [3:0] $end
+$var reg 4 !" x3_reg [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1010 Q
+b1000 P
+b110 O
+b100 N
+b10 M
+b1001 L
+b111 K
+b101 J
+b11 I
+b1 H
+b0 G
+b1011 F
+$end
+#0
+$dumpvars
+bx !"
+bx ~
+bx }
+bx |
+bx {
+bx z
+bx y
+bx x
+bx w
+bx v
+bx u
+bx t
+bx s
+bx r
+b1 q
+b10 p
+b10 o
+b1 n
+bx m
+bx l
+bx k
+bx j
+bx i
+bx h
+xg
+xf
+xe
+xd
+bx c
+bx b
+bx a
+bx `
+bx _
+bx ^
+bx ]
+bx \
+bx [
+bx Z
+bx Y
+bx X
+b1 W
+b10 V
+b10 U
+b1 T
+bx S
+bx R
+bx E
+xD
+bx C
+bx B
+xA
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+b0 4
+b1 3
+b10 2
+b10 1
+b1 0
+bx /
+bx .
+b0 -
+0,
+1+
+b1 *
+b10 )
+b10 (
+b1 '
+0&
+x%
+x$
+x#
+bx "
+bx !
+$end
+#50
+b0 @
+b0 h
+b0 B
+b0 i
+0A
+b0 !
+b0 5
+b0 w
+0d
+b0 [
+0e
+b0 Z
+0f
+b0 Y
+0g
+b0 X
+b0 ?
+b0 r
+b0 ;
+b0 `
+b0 x
+b0 j
+b0 <
+b0 a
+b0 y
+b0 k
+b0 =
+b0 b
+b0 z
+b0 l
+b0 >
+b0 c
+b0 {
+b0 m
+0$
+0%
+b0 :
+b0 S
+b0 R
+b0 6
+b0 \
+b0 v
+b0 !"
+b0 7
+b0 ]
+b0 u
+b0 ~
+b0 8
+b0 ^
+b0 t
+b0 }
+b0 9
+b0 _
+b0 s
+b0 |
+b0 .
+b0 C
+b0 "
+b0 /
+b0 E
+0#
+0D
+1&
+#100
+0&
+0+
+#150
+1&
+#200
+0&
+1,
+#250
+1%
+b1 R
+1&
+#300
+0&
+0,
+#350
+b1 ?
+b1 r
+b10 R
+b1 :
+b1 S
+1&
+#400
+0&
+#450
+b1 !
+b1 5
+b1 w
+b1 >
+b1 c
+b1 {
+b1 m
+b11 R
+b1 9
+b1 _
+b1 s
+b1 |
+1&
+#500
+0&
+#550
+b11 !
+b11 5
+b11 w
+b10 =
+b10 b
+b10 z
+b10 l
+b10 ?
+b10 r
+b1 8
+b1 ^
+b1 t
+b1 }
+b100 R
+b10 :
+b10 S
+1&
+#600
+0&
+#650
+b110 !
+b110 5
+b110 w
+b10 <
+b10 a
+b10 y
+b10 k
+b10 >
+b10 c
+b10 {
+b10 m
+b101 R
+b1 7
+b1 ]
+b1 u
+b1 ~
+b10 9
+b10 _
+b10 s
+b10 |
+1&
+#700
+0&
+#750
+b1001 !
+b1001 5
+b1001 w
+b1 ;
+b1 `
+b1 x
+b1 j
+b100 =
+b100 b
+b100 z
+b100 l
+b11 ?
+b11 r
+b1 6
+b1 \
+b1 v
+b1 !"
+b10 8
+b10 ^
+b10 t
+b10 }
+b110 R
+b11 :
+b11 S
+1&
+#800
+0&
+#850
+b1100 !
+b1100 5
+b1100 w
+b100 <
+b100 a
+b100 y
+b100 k
+b11 >
+b11 c
+b11 {
+b11 m
+b111 R
+b10 7
+b10 ]
+b10 u
+b10 ~
+b11 9
+b11 _
+b11 s
+b11 |
+1&
+#900
+0&
+#950
+b1111 !
+b1111 5
+b1111 w
+b10 ;
+b10 `
+b10 x
+b10 j
+b110 =
+b110 b
+b110 z
+b110 l
+b100 ?
+b100 r
+b10 6
+b10 \
+b10 v
+b10 !"
+b11 8
+b11 ^
+b11 t
+b11 }
+b1000 R
+b100 :
+b100 S
+1&
+#1000
+0&
+#1050
+b10010 !
+b10010 5
+b10010 w
+b110 <
+b110 a
+b110 y
+b110 k
+b100 >
+b100 c
+b100 {
+b100 m
+b1001 R
+b11 7
+b11 ]
+b11 u
+b11 ~
+b100 9
+b100 _
+b100 s
+b100 |
+1&
+#1100
+0&
+#1150
+b10101 !
+b10101 5
+b10101 w
+b11 ;
+b11 `
+b11 x
+b11 j
+b1000 =
+b1000 b
+b1000 z
+b1000 l
+b111 ?
+b111 r
+b11 6
+b11 \
+b11 v
+b11 !"
+b100 8
+b100 ^
+b100 t
+b100 }
+b1010 R
+b111 :
+b111 S
+1&
+#1200
+0&
+#1250
+b11010 !
+b11010 5
+b11010 w
+b1000 <
+b1000 a
+b1000 y
+b1000 k
+b111 >
+b111 c
+b111 {
+b111 m
+b1011 R
+b100 7
+b100 ]
+b100 u
+b100 ~
+b111 9
+b111 _
+b111 s
+b111 |
+1&
+#1300
+0&
+#1350
+b100001 !
+b100001 5
+b100001 w
+b100 ;
+b100 `
+b100 x
+b100 j
+b1110 =
+b1110 b
+b1110 z
+b1110 l
+b0 ?
+b0 r
+b100 6
+b100 \
+b100 v
+b100 !"
+b111 8
+b111 ^
+b111 t
+b111 }
+b0 R
+1$
+0%
+b0 :
+b0 S
+1&
+#1400
+0&
+#1450
+b100000 !
+b100000 5
+b100000 w
+b1110 <
+b1110 a
+b1110 y
+b1110 k
+b0 >
+b0 c
+b0 {
+b0 m
+0$
+b111 7
+b111 ]
+b111 u
+b111 ~
+b0 9
+b0 _
+b0 s
+b0 |
+1&
+#1500
+0&

@@ -1,0 +1,20 @@
+# Icarus Verilog compiled simulation binaries
+*_sim
+healthy_output
+healthy_test
+faulty_test
+final_test
+
+# Waveforms (optional, keep simulation/ VCD files or untrack temporary build artifacts)
+*.vcd.tmp
+
+# Python / Environment
+.venv/
+__pycache__/
+*.pyc
+
+# macOS system files
+.DS_Store
+
+# Temporary scratch notes
+iugjg

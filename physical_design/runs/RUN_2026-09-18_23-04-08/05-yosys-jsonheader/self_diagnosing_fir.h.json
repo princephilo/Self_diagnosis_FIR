@@ -1,0 +1,4638 @@
+{
+  "creator": "Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)",
+  "modules": {
+    "self_diagnosing_fir": {
+      "attributes": {
+        "hdlname": "self_diagnosing_fir",
+        "top": "00000000000000000000000000000001",
+        "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:3.1-158.10"
+      },
+      "ports": {
+        "x": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "h0": {
+          "direction": "input",
+          "bits": [ 6, 7, 8, 9 ]
+        },
+        "h1": {
+          "direction": "input",
+          "bits": [ 10, 11, 12, 13 ]
+        },
+        "h2": {
+          "direction": "input",
+          "bits": [ 14, 15, 16, 17 ]
+        },
+        "h3": {
+          "direction": "input",
+          "bits": [ 18, 19, 20, 21 ]
+        },
+        "rst": {
+          "direction": "input",
+          "bits": [ 22 ]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [ 23 ]
+        },
+        "start_diag": {
+          "direction": "input",
+          "bits": [ 24 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 ]
+        },
+        "fault_detected": {
+          "direction": "output",
+          "bits": [ 35 ]
+        },
+        "fault_location": {
+          "direction": "output",
+          "bits": [ 36, 37 ]
+        },
+        "fault_bit": {
+          "direction": "output",
+          "bits": [ 38, 39, 40 ]
+        },
+        "fault_type": {
+          "direction": "output",
+          "bits": [ 41 ]
+        },
+        "fault_vector": {
+          "direction": "output",
+          "bits": [ 42, 43, 44, 45 ]
+        },
+        "diag_busy": {
+          "direction": "output",
+          "bits": [ 46 ]
+        },
+        "diag_done": {
+          "direction": "output",
+          "bits": [ 47 ]
+        }
+      },
+      "cells": {
+        "$flatten\\controller.$procdff$194": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 48 ],
+            "Q": [ 46 ]
+          }
+        },
+        "$flatten\\controller.$procdff$195": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 49 ],
+            "Q": [ 47 ]
+          }
+        },
+        "$flatten\\controller.$procdff$196": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 50, 51, 52, 53 ],
+            "Q": [ 54, 55, 56, 57 ]
+          }
+        },
+        "$flatten\\controller.$procdff$197": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 58, 59, 60, 61 ],
+            "Q": [ 62, 63, 64, 65 ]
+          }
+        },
+        "$flatten\\controller.$procmux$125": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:152.16-152.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 66 ],
+            "Y": [ 67 ]
+          }
+        },
+        "$flatten\\controller.$procmux$126_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:152.16-152.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "0", "1" ],
+            "Y": [ 66 ]
+          }
+        },
+        "$flatten\\controller.$procmux$128": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.9-33.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.5-180.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 67 ],
+            "B": [ "0" ],
+            "S": [ 22 ],
+            "Y": [ 49 ]
+          }
+        },
+        "$flatten\\controller.$procmux$132": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000001010",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:143.16-143.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ "1", "1", "1", "0", "1", "1", "1", "0", "0", "0", "1", "0", "0", "0", "1", "0", "1", "1", "0", "0", "1", "1", "0", "0", "0", "1", "0", "0", "0", "1", "0", "0", "1", "0", "0", "0", "1", "0", "0", "0" ],
+            "S": [ 68, 69, 70, 71, 72, 73, 74, 75, 76, 77 ],
+            "Y": [ 78, 79, 80, 81 ]
+          }
+        },
+        "$flatten\\controller.$procmux$133_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:143.16-143.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 68 ]
+          }
+        },
+        "$flatten\\controller.$procmux$134_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:134.16-134.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 69 ]
+          }
+        },
+        "$flatten\\controller.$procmux$135_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:125.16-125.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 70 ]
+          }
+        },
+        "$flatten\\controller.$procmux$136_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:116.16-116.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 71 ]
+          }
+        },
+        "$flatten\\controller.$procmux$137_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:107.16-107.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 72 ]
+          }
+        },
+        "$flatten\\controller.$procmux$138_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:98.16-98.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 73 ]
+          }
+        },
+        "$flatten\\controller.$procmux$139_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:89.16-89.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 74 ]
+          }
+        },
+        "$flatten\\controller.$procmux$140_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:80.16-80.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 75 ]
+          }
+        },
+        "$flatten\\controller.$procmux$141_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:71.16-71.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 76 ]
+          }
+        },
+        "$flatten\\controller.$procmux$142_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:62.16-62.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 77 ]
+          }
+        },
+        "$flatten\\controller.$procmux$144": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.9-33.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.5-180.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 78, 79, 80, 81 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 50, 51, 52, 53 ]
+          }
+        },
+        "$flatten\\controller.$procmux$148": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000001011",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:143.16-143.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ "1", "1", "0", "1", "0", "1", "0", "1", "1", "0", "0", "1", "0", "0", "0", "1", "1", "1", "1", "0", "0", "1", "1", "0", "1", "0", "1", "0", "0", "0", "1", "0", "1", "1", "0", "0", "0", "1", "0", "0", 82, 83, 84, 85 ],
+            "S": [ 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96 ],
+            "Y": [ 97, 98, 99, 100 ]
+          }
+        },
+        "$flatten\\controller.$procmux$149_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:143.16-143.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 86 ]
+          }
+        },
+        "$flatten\\controller.$procmux$150_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:134.16-134.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 87 ]
+          }
+        },
+        "$flatten\\controller.$procmux$151_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:125.16-125.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 88 ]
+          }
+        },
+        "$flatten\\controller.$procmux$152_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:116.16-116.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 89 ]
+          }
+        },
+        "$flatten\\controller.$procmux$153_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:107.16-107.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 90 ]
+          }
+        },
+        "$flatten\\controller.$procmux$154_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:98.16-98.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 91 ]
+          }
+        },
+        "$flatten\\controller.$procmux$155_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:89.16-89.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 92 ]
+          }
+        },
+        "$flatten\\controller.$procmux$156_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:80.16-80.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 93 ]
+          }
+        },
+        "$flatten\\controller.$procmux$157_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:71.16-71.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 94 ]
+          }
+        },
+        "$flatten\\controller.$procmux$158_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:62.16-62.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 95 ]
+          }
+        },
+        "$flatten\\controller.$procmux$159": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:55.21-55.31|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:55.17-60.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "0" ],
+            "S": [ 24 ],
+            "Y": [ 82, 83, 84, 85 ]
+          }
+        },
+        "$flatten\\controller.$procmux$161_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.21-48.21|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "Y": [ 96 ]
+          }
+        },
+        "$flatten\\controller.$procmux$163": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.9-33.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.5-180.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97, 98, 99, 100 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 58, 59, 60, 61 ]
+          }
+        },
+        "$flatten\\controller.$procmux$167": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": "00000000000000000000000000001011",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:143.16-143.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 46, 46, 46, 46, 46, 46, 46, 46, 46, 46, 101 ],
+            "S": [ 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112 ],
+            "Y": [ 113 ]
+          }
+        },
+        "$flatten\\controller.$procmux$168_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:143.16-143.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "0", "1" ],
+            "Y": [ 102 ]
+          }
+        },
+        "$flatten\\controller.$procmux$169_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:134.16-134.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "1" ],
+            "Y": [ 103 ]
+          }
+        },
+        "$flatten\\controller.$procmux$170_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:125.16-125.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "0", "0", "1" ],
+            "Y": [ 104 ]
+          }
+        },
+        "$flatten\\controller.$procmux$171_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:116.16-116.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "1", "0" ],
+            "Y": [ 105 ]
+          }
+        },
+        "$flatten\\controller.$procmux$172_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:107.16-107.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "1", "0" ],
+            "Y": [ 106 ]
+          }
+        },
+        "$flatten\\controller.$procmux$173_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:98.16-98.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "1", "0" ],
+            "Y": [ 107 ]
+          }
+        },
+        "$flatten\\controller.$procmux$174_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:89.16-89.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "0", "1", "0" ],
+            "Y": [ 108 ]
+          }
+        },
+        "$flatten\\controller.$procmux$175_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:80.16-80.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "1", "0", "0" ],
+            "Y": [ 109 ]
+          }
+        },
+        "$flatten\\controller.$procmux$176_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:71.16-71.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "0", "1", "0", "0" ],
+            "Y": [ 110 ]
+          }
+        },
+        "$flatten\\controller.$procmux$177_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:62.16-62.16|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "B": [ "1", "0", "0", "0" ],
+            "Y": [ 111 ]
+          }
+        },
+        "$flatten\\controller.$procmux$178": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:55.21-55.31|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:55.17-60.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 24 ],
+            "Y": [ 101 ]
+          }
+        },
+        "$flatten\\controller.$procmux$180_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.21-48.21|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:48.9-178.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62, 63, 64, 65 ],
+            "Y": [ 112 ]
+          }
+        },
+        "$flatten\\controller.$procmux$182": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.9-33.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:33.5-180.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 113 ],
+            "B": [ "0" ],
+            "S": [ 22 ],
+            "Y": [ 48 ]
+          }
+        },
+        "$flatten\\diagnostic.$eq$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155$71": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155.11-155.47"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 114 ],
+            "Y": [ 115 ]
+          }
+        },
+        "$flatten\\diagnostic.$logic_and$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155$73": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155.10-156.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 115 ],
+            "B": [ 116 ],
+            "Y": [ 117 ]
+          }
+        },
+        "$flatten\\diagnostic.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:48$3": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:48.22-48.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 7, 8, 9 ],
+            "B": [ 118, 119, 120, 121 ],
+            "Y": [ 122, 123, 124, 125, 126, 127, 128, 129 ]
+          }
+        },
+        "$flatten\\diagnostic.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:49$4": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:49.22-49.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12, 13 ],
+            "B": [ 130, 131, 132, 133 ],
+            "Y": [ 134, 135, 136, 137, 138, 139, 140, 141 ]
+          }
+        },
+        "$flatten\\diagnostic.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:50$5": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:50.22-50.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17 ],
+            "B": [ 142, 143, 144, 145 ],
+            "Y": [ 146, 147, 148, 149, 150, 151, 152, 153 ]
+          }
+        },
+        "$flatten\\diagnostic.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:51$6": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:51.22-51.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 18, 19, 20, 21 ],
+            "B": [ 154, 155, 156, 157 ],
+            "Y": [ 158, 159, 160, 161, 162, 163, 164, 165 ]
+          }
+        },
+        "$flatten\\diagnostic.$or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75$15": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75.9-76.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 166 ],
+            "B": [ 167 ],
+            "Y": [ 168 ]
+          }
+        },
+        "$flatten\\diagnostic.$or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75$16": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75.9-77.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 168 ],
+            "B": [ 169 ],
+            "Y": [ 170 ]
+          }
+        },
+        "$flatten\\diagnostic.$or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75$17": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75.9-78.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 170 ],
+            "B": [ 171 ],
+            "Y": [ 172 ]
+          }
+        },
+        "$flatten\\diagnostic.$reduce_or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:60$11": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:60.19-60.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 173, 174, 175, 176, 177, 178, 179, 180 ],
+            "Y": [ 166 ]
+          }
+        },
+        "$flatten\\diagnostic.$reduce_or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:61$12": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:61.19-61.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 181, 182, 183, 184, 185, 186, 187, 188 ],
+            "Y": [ 167 ]
+          }
+        },
+        "$flatten\\diagnostic.$reduce_or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:62$13": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:62.19-62.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 189, 190, 191, 192, 193, 194, 195, 196 ],
+            "Y": [ 169 ]
+          }
+        },
+        "$flatten\\diagnostic.$reduce_or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:63$14": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:63.19-63.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 197, 198, 199, 200, 201, 202, 203, 204 ],
+            "Y": [ 171 ]
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:146$62": {
+          "hide_name": 1,
+          "type": "$shiftx",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:146.22-146.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 205, 206, 207, 208, 209, 210, 211, 212 ],
+            "B": [ 213, 214, 215 ],
+            "Y": [ 216 ]
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147$63": {
+          "hide_name": 1,
+          "type": "$shiftx",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147.22-147.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 217, 218, 219, 220, 221, 222, 223, 224 ],
+            "B": [ 213, 214, 215 ],
+            "Y": [ 225 ]
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148$64": {
+          "hide_name": 1,
+          "type": "$shiftx",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148.22-148.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 226, 227, 228, 229, 230, 231, 232, 233 ],
+            "B": [ 213, 214, 215 ],
+            "Y": [ 234 ]
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149$65": {
+          "hide_name": 1,
+          "type": "$shiftx",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149.22-149.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 235, 236, 237, 238, 239, 240, 241, 242 ],
+            "B": [ 213, 214, 215 ],
+            "Y": [ 243 ]
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155$70": {
+          "hide_name": 1,
+          "type": "$shiftx",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155.28-155.39"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 244, 245, 246, 247, 248, 249, 250, 251 ],
+            "B": [ 213, 214, 215 ],
+            "Y": [ 114 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:101$56": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:101.9-134.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 252, 253, 254 ],
+            "B": [ 255, 256, 257 ],
+            "S": [ 167 ],
+            "Y": [ 258, 259, 260 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:102$37": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:102.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 261, 262, 263 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 181 ],
+            "Y": [ 255, 256, 257 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:103$36": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:103.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 264, 265, 266 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 182 ],
+            "Y": [ 261, 262, 263 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:104$35": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:104.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 267, 268, 269 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 183 ],
+            "Y": [ 264, 265, 266 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:105$34": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:105.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 270, 271, 272 ],
+            "B": [ "1", "1", "0" ],
+            "S": [ 184 ],
+            "Y": [ 267, 268, 269 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:106$33": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:106.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 273, 274, 275 ],
+            "B": [ "0", "0", "1" ],
+            "S": [ 185 ],
+            "Y": [ 270, 271, 272 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:107$32": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:107.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 276, 277, 278 ],
+            "B": [ "1", "0", "1" ],
+            "S": [ 186 ],
+            "Y": [ 273, 274, 275 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:108$31": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:108.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 279, 280, 281 ],
+            "B": [ "0", "1", "1" ],
+            "S": [ 187 ],
+            "Y": [ 276, 277, 278 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:109$30": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:109.13-110.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ "1", "1", "1" ],
+            "S": [ 188 ],
+            "Y": [ 279, 280, 281 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:112$55": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:112.9-134.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 282, 283, 284 ],
+            "B": [ 285, 286, 287 ],
+            "S": [ 169 ],
+            "Y": [ 252, 253, 254 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:113$45": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:113.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 288, 289, 290 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 189 ],
+            "Y": [ 285, 286, 287 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:114$44": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:114.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 291, 292, 293 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 190 ],
+            "Y": [ 288, 289, 290 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:115$43": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:115.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 294, 295, 296 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 191 ],
+            "Y": [ 291, 292, 293 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:116$42": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:116.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 297, 298, 299 ],
+            "B": [ "1", "1", "0" ],
+            "S": [ 192 ],
+            "Y": [ 294, 295, 296 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:117$41": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:117.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 300, 301, 302 ],
+            "B": [ "0", "0", "1" ],
+            "S": [ 193 ],
+            "Y": [ 297, 298, 299 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:118$40": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:118.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 303, 304, 305 ],
+            "B": [ "1", "0", "1" ],
+            "S": [ 194 ],
+            "Y": [ 300, 301, 302 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:119$39": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:119.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 306, 307, 308 ],
+            "B": [ "0", "1", "1" ],
+            "S": [ 195 ],
+            "Y": [ 303, 304, 305 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:120$38": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:120.13-121.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ "1", "1", "1" ],
+            "S": [ 196 ],
+            "Y": [ 306, 307, 308 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:123$54": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:123.9-134.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ 309, 310, 311 ],
+            "S": [ 171 ],
+            "Y": [ 282, 283, 284 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:124$53": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:124.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 312, 313, 314 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 197 ],
+            "Y": [ 309, 310, 311 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:125$52": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:125.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 315, 316, 317 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 198 ],
+            "Y": [ 312, 313, 314 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:126$51": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:126.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 318, 319, 320 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 199 ],
+            "Y": [ 315, 316, 317 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:127$50": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:127.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 321, 322, 323 ],
+            "B": [ "1", "1", "0" ],
+            "S": [ 200 ],
+            "Y": [ 318, 319, 320 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:128$49": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:128.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 324, 325, 326 ],
+            "B": [ "0", "0", "1" ],
+            "S": [ 201 ],
+            "Y": [ 321, 322, 323 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:129$48": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:129.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 327, 328, 329 ],
+            "B": [ "1", "0", "1" ],
+            "S": [ 202 ],
+            "Y": [ 324, 325, 326 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:130$47": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:130.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 330, 331, 332 ],
+            "B": [ "0", "1", "1" ],
+            "S": [ 203 ],
+            "Y": [ 327, 328, 329 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:131$46": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:131.13-132.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ "1", "1", "1" ],
+            "S": [ 204 ],
+            "Y": [ 330, 331, 332 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:138$61": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:138.9-142.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 333, 334, 335, 336, 337, 338, 339, 340 ],
+            "B": [ 122, 123, 124, 125, 126, 127, 128, 129 ],
+            "S": [ 166 ],
+            "Y": [ 244, 245, 246, 247, 248, 249, 250, 251 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:139$60": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:139.9-142.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 341, 342, 343, 344, 345, 346, 347, 348 ],
+            "B": [ 134, 135, 136, 137, 138, 139, 140, 141 ],
+            "S": [ 167 ],
+            "Y": [ 333, 334, 335, 336, 337, 338, 339, 340 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:140$59": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:140.9-142.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 349, 350, 351, 352, 353, 354, 355, 356 ],
+            "B": [ 146, 147, 148, 149, 150, 151, 152, 153 ],
+            "S": [ 169 ],
+            "Y": [ 341, 342, 343, 344, 345, 346, 347, 348 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:141$58": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:141.9-142.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 158, 159, 160, 161, 162, 163, 164, 165 ],
+            "S": [ 171 ],
+            "Y": [ 349, 350, 351, 352, 353, 354, 355, 356 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:146$69": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:146.9-150.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 357 ],
+            "B": [ 216 ],
+            "S": [ 166 ],
+            "Y": [ 116 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147$68": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147.9-150.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 358 ],
+            "B": [ 225 ],
+            "S": [ 167 ],
+            "Y": [ 357 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148$67": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148.9-150.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 359 ],
+            "B": [ 234 ],
+            "S": [ 169 ],
+            "Y": [ 358 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149$66": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149.9-150.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 243 ],
+            "S": [ 171 ],
+            "Y": [ 359 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:154$74": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:154.9-157.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 117 ],
+            "S": [ 172 ],
+            "Y": [ 360 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:82$21": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:82.9-86.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 361, 362 ],
+            "B": [ "0", "0" ],
+            "S": [ 166 ],
+            "Y": [ 363, 364 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:83$20": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:83.9-86.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 365, 366 ],
+            "B": [ "1", "0" ],
+            "S": [ 167 ],
+            "Y": [ 361, 362 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:84$19": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:84.9-86.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 367, 368 ],
+            "B": [ "0", "1" ],
+            "S": [ 169 ],
+            "Y": [ 365, 366 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:85$18": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:85.9-86.25"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0" ],
+            "B": [ "1", "1" ],
+            "S": [ 171 ],
+            "Y": [ 367, 368 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:90$57": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:90.9-134.13"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 258, 259, 260 ],
+            "B": [ 369, 370, 371 ],
+            "S": [ 166 ],
+            "Y": [ 213, 214, 215 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:91$29": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:91.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 372, 373, 374 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 173 ],
+            "Y": [ 369, 370, 371 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:92$28": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:92.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 375, 376, 377 ],
+            "B": [ "1", "0", "0" ],
+            "S": [ 174 ],
+            "Y": [ 372, 373, 374 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:93$27": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:93.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 378, 379, 380 ],
+            "B": [ "0", "1", "0" ],
+            "S": [ 175 ],
+            "Y": [ 375, 376, 377 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:94$26": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:94.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 381, 382, 383 ],
+            "B": [ "1", "1", "0" ],
+            "S": [ 176 ],
+            "Y": [ 378, 379, 380 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:95$25": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:95.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 384, 385, 386 ],
+            "B": [ "0", "0", "1" ],
+            "S": [ 177 ],
+            "Y": [ 381, 382, 383 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:96$24": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:96.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 387, 388, 389 ],
+            "B": [ "1", "0", "1" ],
+            "S": [ 178 ],
+            "Y": [ 384, 385, 386 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:97$23": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:97.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 390, 391, 392 ],
+            "B": [ "0", "1", "1" ],
+            "S": [ 179 ],
+            "Y": [ 387, 388, 389 ]
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:98$22": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:98.13-99.17"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0" ],
+            "B": [ "1", "1", "1" ],
+            "S": [ 180 ],
+            "Y": [ 390, 391, 392 ]
+          }
+        },
+        "$flatten\\diagnostic.$xor$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:54$7": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:54.22-54.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 122, 123, 124, 125, 126, 127, 128, 129 ],
+            "B": [ 205, 206, 207, 208, 209, 210, 211, 212 ],
+            "Y": [ 173, 174, 175, 176, 177, 178, 179, 180 ]
+          }
+        },
+        "$flatten\\diagnostic.$xor$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:55$8": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:55.22-55.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 134, 135, 136, 137, 138, 139, 140, 141 ],
+            "B": [ 217, 218, 219, 220, 221, 222, 223, 224 ],
+            "Y": [ 181, 182, 183, 184, 185, 186, 187, 188 ]
+          }
+        },
+        "$flatten\\diagnostic.$xor$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:56$9": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:56.22-56.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 146, 147, 148, 149, 150, 151, 152, 153 ],
+            "B": [ 226, 227, 228, 229, 230, 231, 232, 233 ],
+            "Y": [ 189, 190, 191, 192, 193, 194, 195, 196 ]
+          }
+        },
+        "$flatten\\diagnostic.$xor$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:57$10": {
+          "hide_name": 1,
+          "type": "$xor",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:57.22-57.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 158, 159, 160, 161, 162, 163, 164, 165 ],
+            "B": [ 235, 236, 237, 238, 239, 240, 241, 242 ],
+            "Y": [ 197, 198, 199, 200, 201, 202, 203, 204 ]
+          }
+        },
+        "$flatten\\fir_core.$add$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43$79": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001000",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43.12-43.19"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 205, 206, 207, 208, 209, 210, 211, 212 ],
+            "B": [ 217, 218, 219, 220, 221, 222, 223, 224 ],
+            "Y": [ 393, 394, 395, 396, 397, 398, 399, 400, 401, 402 ]
+          }
+        },
+        "$flatten\\fir_core.$add$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43$80": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43.12-43.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 393, 394, 395, 396, 397, 398, 399, 400, 401, 402 ],
+            "B": [ 226, 227, 228, 229, 230, 231, 232, 233 ],
+            "Y": [ 403, 404, 405, 406, 407, 408, 409, 410, 411, 412 ]
+          }
+        },
+        "$flatten\\fir_core.$add$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43$81": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000001000",
+            "Y_WIDTH": "00000000000000000000000000001010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43.12-43.29"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 403, 404, 405, 406, 407, 408, 409, 410, 411, 412 ],
+            "B": [ 235, 236, 237, 238, 239, 240, 241, 242 ],
+            "Y": [ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 ]
+          }
+        },
+        "$flatten\\fir_core.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:38$75": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:38.13-38.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 7, 8, 9 ],
+            "B": [ 118, 119, 120, 121 ],
+            "Y": [ 205, 206, 207, 208, 209, 210, 211, 212 ]
+          }
+        },
+        "$flatten\\fir_core.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:39$76": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:39.13-39.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12, 13 ],
+            "B": [ 130, 131, 132, 133 ],
+            "Y": [ 217, 218, 219, 220, 221, 222, 223, 224 ]
+          }
+        },
+        "$flatten\\fir_core.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:40$77": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:40.13-40.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17 ],
+            "B": [ 142, 143, 144, 145 ],
+            "Y": [ 226, 227, 228, 229, 230, 231, 232, 233 ]
+          }
+        },
+        "$flatten\\fir_core.$mul$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:41$78": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000001000"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:41.13-41.24"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 18, 19, 20, 21 ],
+            "B": [ 154, 155, 156, 157 ],
+            "Y": [ 235, 236, 237, 238, 239, 240, 241, 242 ]
+          }
+        },
+        "$flatten\\fir_core.$procdff$190": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 413, 414, 415, 416 ],
+            "Q": [ 118, 119, 120, 121 ]
+          }
+        },
+        "$flatten\\fir_core.$procdff$191": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 417, 418, 419, 420 ],
+            "Q": [ 130, 131, 132, 133 ]
+          }
+        },
+        "$flatten\\fir_core.$procdff$192": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 421, 422, 423, 424 ],
+            "Q": [ 142, 143, 144, 145 ]
+          }
+        },
+        "$flatten\\fir_core.$procdff$193": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 425, 426, 427, 428 ],
+            "Q": [ 154, 155, 156, 157 ]
+          }
+        },
+        "$flatten\\fir_core.$procmux$113": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.9-47.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.5-63.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 142, 143, 144, 145 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 425, 426, 427, 428 ]
+          }
+        },
+        "$flatten\\fir_core.$procmux$116": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.9-47.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.5-63.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 130, 131, 132, 133 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 421, 422, 423, 424 ]
+          }
+        },
+        "$flatten\\fir_core.$procmux$119": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.9-47.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.5-63.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 118, 119, 120, 121 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 417, 418, 419, 420 ]
+          }
+        },
+        "$flatten\\fir_core.$procmux$122": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.9-47.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:47.5-63.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 429, 430, 431, 432 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 413, 414, 415, 416 ]
+          }
+        },
+        "$procdff$184": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 433 ],
+            "Q": [ 35 ]
+          }
+        },
+        "$procdff$185": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 434, 435 ],
+            "Q": [ 36, 37 ]
+          }
+        },
+        "$procdff$186": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 436, 437, 438 ],
+            "Q": [ 38, 39, 40 ]
+          }
+        },
+        "$procdff$187": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 439 ],
+            "Q": [ 41 ]
+          }
+        },
+        "$procdff$188": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 440, 441, 442, 443 ],
+            "Q": [ 42, 43, 44, 45 ]
+          }
+        },
+        "$procdff$189": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 23 ],
+            "D": [ 444 ],
+            "Q": [ 445 ]
+          }
+        },
+        "$procmux$100": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.9-121.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.5-147.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 446, 447, 448 ],
+            "B": [ "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 436, 437, 438 ]
+          }
+        },
+        "$procmux$102": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.13-137.24|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.9-145.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36, 37 ],
+            "B": [ 363, 364 ],
+            "S": [ 445 ],
+            "Y": [ 449, 450 ]
+          }
+        },
+        "$procmux$105": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.9-121.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.5-147.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 449, 450 ],
+            "B": [ "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 434, 435 ]
+          }
+        },
+        "$procmux$107": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.13-137.24|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.9-145.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 172 ],
+            "S": [ 445 ],
+            "Y": [ 451 ]
+          }
+        },
+        "$procmux$110": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.9-121.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.5-147.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 451 ],
+            "B": [ "0" ],
+            "S": [ 22 ],
+            "Y": [ 433 ]
+          }
+        },
+        "$procmux$85": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.9-121.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.5-147.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 47 ],
+            "B": [ "0" ],
+            "S": [ 22 ],
+            "Y": [ 444 ]
+          }
+        },
+        "$procmux$87": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.13-137.24|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.9-145.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 42, 43, 44, 45 ],
+            "B": [ 166, 167, 169, 171 ],
+            "S": [ 445 ],
+            "Y": [ 452, 453, 454, 455 ]
+          }
+        },
+        "$procmux$90": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.9-121.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.5-147.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 452, 453, 454, 455 ],
+            "B": [ "0", "0", "0", "0" ],
+            "S": [ 22 ],
+            "Y": [ 440, 441, 442, 443 ]
+          }
+        },
+        "$procmux$92": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.13-137.24|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.9-145.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41 ],
+            "B": [ 360 ],
+            "S": [ 445 ],
+            "Y": [ 456 ]
+          }
+        },
+        "$procmux$95": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.9-121.12|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:121.5-147.8"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 456 ],
+            "B": [ "0" ],
+            "S": [ 22 ],
+            "Y": [ 439 ]
+          }
+        },
+        "$procmux$97": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000011"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.13-137.24|/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:137.9-145.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 38, 39, 40 ],
+            "B": [ 213, 214, 215 ],
+            "S": [ 445 ],
+            "Y": [ 446, 447, 448 ]
+          }
+        },
+        "$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:56$1": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:56.16-56.38"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5 ],
+            "B": [ 54, 55, 56, 57 ],
+            "S": [ 46 ],
+            "Y": [ 429, 430, 431, 432 ]
+          }
+        }
+      },
+      "netnames": {
+        "$0\\diag_done_d[0:0]": {
+          "hide_name": 1,
+          "bits": [ 444 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          }
+        },
+        "$0\\fault_bit_reg[2:0]": {
+          "hide_name": 1,
+          "bits": [ 436, 437, 438 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          }
+        },
+        "$0\\fault_detected_reg[0:0]": {
+          "hide_name": 1,
+          "bits": [ 433 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          }
+        },
+        "$0\\fault_location_reg[1:0]": {
+          "hide_name": 1,
+          "bits": [ 434, 435 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          }
+        },
+        "$0\\fault_type_reg[0:0]": {
+          "hide_name": 1,
+          "bits": [ 439 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          }
+        },
+        "$0\\fault_vector_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 440, 441, 442, 443 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:119.1-149.4"
+          }
+        },
+        "$flatten\\controller.$0\\diag_busy[0:0]": {
+          "hide_name": 1,
+          "bits": [ 48 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          }
+        },
+        "$flatten\\controller.$0\\diag_done[0:0]": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          }
+        },
+        "$flatten\\controller.$0\\state[3:0]": {
+          "hide_name": 1,
+          "bits": [ 58, 59, 60, 61 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          }
+        },
+        "$flatten\\controller.$0\\test_x[3:0]": {
+          "hide_name": 1,
+          "bits": [ 50, 51, 52, 53 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:31.1-182.4"
+          }
+        },
+        "$flatten\\controller.$procmux$125_Y": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$126_CMP": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$132_Y": {
+          "hide_name": 1,
+          "bits": [ 78, 79, 80, 81 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$133_CMP": {
+          "hide_name": 1,
+          "bits": [ 68 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$134_CMP": {
+          "hide_name": 1,
+          "bits": [ 69 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$135_CMP": {
+          "hide_name": 1,
+          "bits": [ 70 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$136_CMP": {
+          "hide_name": 1,
+          "bits": [ 71 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$137_CMP": {
+          "hide_name": 1,
+          "bits": [ 72 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$138_CMP": {
+          "hide_name": 1,
+          "bits": [ 73 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$139_CMP": {
+          "hide_name": 1,
+          "bits": [ 74 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$140_CMP": {
+          "hide_name": 1,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$141_CMP": {
+          "hide_name": 1,
+          "bits": [ 76 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$142_CMP": {
+          "hide_name": 1,
+          "bits": [ 77 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$148_Y": {
+          "hide_name": 1,
+          "bits": [ 97, 98, 99, 100 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$149_CMP": {
+          "hide_name": 1,
+          "bits": [ 86 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$150_CMP": {
+          "hide_name": 1,
+          "bits": [ 87 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$151_CMP": {
+          "hide_name": 1,
+          "bits": [ 88 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$152_CMP": {
+          "hide_name": 1,
+          "bits": [ 89 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$153_CMP": {
+          "hide_name": 1,
+          "bits": [ 90 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$154_CMP": {
+          "hide_name": 1,
+          "bits": [ 91 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$155_CMP": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$156_CMP": {
+          "hide_name": 1,
+          "bits": [ 93 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$157_CMP": {
+          "hide_name": 1,
+          "bits": [ 94 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$158_CMP": {
+          "hide_name": 1,
+          "bits": [ 95 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$159_Y": {
+          "hide_name": 1,
+          "bits": [ 82, 83, 84, 85 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$161_CMP": {
+          "hide_name": 1,
+          "bits": [ 96 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$167_Y": {
+          "hide_name": 1,
+          "bits": [ 113 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$168_CMP": {
+          "hide_name": 1,
+          "bits": [ 102 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$169_CMP": {
+          "hide_name": 1,
+          "bits": [ 103 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$170_CMP": {
+          "hide_name": 1,
+          "bits": [ 104 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$171_CMP": {
+          "hide_name": 1,
+          "bits": [ 105 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$172_CMP": {
+          "hide_name": 1,
+          "bits": [ 106 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$173_CMP": {
+          "hide_name": 1,
+          "bits": [ 107 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$174_CMP": {
+          "hide_name": 1,
+          "bits": [ 108 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$175_CMP": {
+          "hide_name": 1,
+          "bits": [ 109 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$176_CMP": {
+          "hide_name": 1,
+          "bits": [ 110 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$177_CMP": {
+          "hide_name": 1,
+          "bits": [ 111 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$178_Y": {
+          "hide_name": 1,
+          "bits": [ 101 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\controller.$procmux$180_CMP": {
+          "hide_name": 1,
+          "bits": [ 112 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\diagnostic.$eq$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155$71_Y": {
+          "hide_name": 1,
+          "bits": [ 115 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155.11-155.47"
+          }
+        },
+        "$flatten\\diagnostic.$logic_and$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155$73_Y": {
+          "hide_name": 1,
+          "bits": [ 117 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155.10-156.35"
+          }
+        },
+        "$flatten\\diagnostic.$or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75$15_Y": {
+          "hide_name": 1,
+          "bits": [ 168 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75.9-76.17"
+          }
+        },
+        "$flatten\\diagnostic.$or$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75$16_Y": {
+          "hide_name": 1,
+          "bits": [ 170 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:75.9-77.17"
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:146$62_Y": {
+          "hide_name": 1,
+          "bits": [ 216 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:146.22-146.33"
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147$63_Y": {
+          "hide_name": 1,
+          "bits": [ 225 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147.22-147.33"
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148$64_Y": {
+          "hide_name": 1,
+          "bits": [ 234 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148.22-148.33"
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149$65_Y": {
+          "hide_name": 1,
+          "bits": [ 243 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149.22-149.33"
+          }
+        },
+        "$flatten\\diagnostic.$shiftx$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155$70_Y": {
+          "hide_name": 1,
+          "bits": [ 114 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:155.28-155.39"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:101$56_Y": {
+          "hide_name": 1,
+          "bits": [ 258, 259, 260 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:101.9-134.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:102$37_Y": {
+          "hide_name": 1,
+          "bits": [ 255, 256, 257 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:102.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:103$36_Y": {
+          "hide_name": 1,
+          "bits": [ 261, 262, 263 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:103.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:104$35_Y": {
+          "hide_name": 1,
+          "bits": [ 264, 265, 266 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:104.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:105$34_Y": {
+          "hide_name": 1,
+          "bits": [ 267, 268, 269 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:105.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:106$33_Y": {
+          "hide_name": 1,
+          "bits": [ 270, 271, 272 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:106.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:107$32_Y": {
+          "hide_name": 1,
+          "bits": [ 273, 274, 275 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:107.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:108$31_Y": {
+          "hide_name": 1,
+          "bits": [ 276, 277, 278 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:108.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:109$30_Y": {
+          "hide_name": 1,
+          "bits": [ 279, 280, 281 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:109.13-110.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:112$55_Y": {
+          "hide_name": 1,
+          "bits": [ 252, 253, 254 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:112.9-134.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:113$45_Y": {
+          "hide_name": 1,
+          "bits": [ 285, 286, 287 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:113.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:114$44_Y": {
+          "hide_name": 1,
+          "bits": [ 288, 289, 290 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:114.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:115$43_Y": {
+          "hide_name": 1,
+          "bits": [ 291, 292, 293 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:115.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:116$42_Y": {
+          "hide_name": 1,
+          "bits": [ 294, 295, 296 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:116.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:117$41_Y": {
+          "hide_name": 1,
+          "bits": [ 297, 298, 299 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:117.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:118$40_Y": {
+          "hide_name": 1,
+          "bits": [ 300, 301, 302 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:118.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:119$39_Y": {
+          "hide_name": 1,
+          "bits": [ 303, 304, 305 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:119.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:120$38_Y": {
+          "hide_name": 1,
+          "bits": [ 306, 307, 308 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:120.13-121.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:123$54_Y": {
+          "hide_name": 1,
+          "bits": [ 282, 283, 284 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:123.9-134.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:124$53_Y": {
+          "hide_name": 1,
+          "bits": [ 309, 310, 311 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:124.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:125$52_Y": {
+          "hide_name": 1,
+          "bits": [ 312, 313, 314 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:125.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:126$51_Y": {
+          "hide_name": 1,
+          "bits": [ 315, 316, 317 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:126.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:127$50_Y": {
+          "hide_name": 1,
+          "bits": [ 318, 319, 320 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:127.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:128$49_Y": {
+          "hide_name": 1,
+          "bits": [ 321, 322, 323 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:128.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:129$48_Y": {
+          "hide_name": 1,
+          "bits": [ 324, 325, 326 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:129.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:130$47_Y": {
+          "hide_name": 1,
+          "bits": [ 327, 328, 329 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:130.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:131$46_Y": {
+          "hide_name": 1,
+          "bits": [ 330, 331, 332 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:131.13-132.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:139$60_Y": {
+          "hide_name": 1,
+          "bits": [ 333, 334, 335, 336, 337, 338, 339, 340 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:139.9-142.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:140$59_Y": {
+          "hide_name": 1,
+          "bits": [ 341, 342, 343, 344, 345, 346, 347, 348 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:140.9-142.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:141$58_Y": {
+          "hide_name": 1,
+          "bits": [ 349, 350, 351, 352, 353, 354, 355, 356 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:141.9-142.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147$68_Y": {
+          "hide_name": 1,
+          "bits": [ 357 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:147.9-150.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148$67_Y": {
+          "hide_name": 1,
+          "bits": [ 358 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:148.9-150.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149$66_Y": {
+          "hide_name": 1,
+          "bits": [ 359 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:149.9-150.13"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:83$20_Y": {
+          "hide_name": 1,
+          "bits": [ 361, 362 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:83.9-86.25"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:84$19_Y": {
+          "hide_name": 1,
+          "bits": [ 365, 366 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:84.9-86.25"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:85$18_Y": {
+          "hide_name": 1,
+          "bits": [ 367, 368 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:85.9-86.25"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:91$29_Y": {
+          "hide_name": 1,
+          "bits": [ 369, 370, 371 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:91.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:92$28_Y": {
+          "hide_name": 1,
+          "bits": [ 372, 373, 374 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:92.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:93$27_Y": {
+          "hide_name": 1,
+          "bits": [ 375, 376, 377 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:93.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:94$26_Y": {
+          "hide_name": 1,
+          "bits": [ 378, 379, 380 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:94.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:95$25_Y": {
+          "hide_name": 1,
+          "bits": [ 381, 382, 383 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:95.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:96$24_Y": {
+          "hide_name": 1,
+          "bits": [ 384, 385, 386 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:96.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:97$23_Y": {
+          "hide_name": 1,
+          "bits": [ 387, 388, 389 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:97.13-99.17"
+          }
+        },
+        "$flatten\\diagnostic.$ternary$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:98$22_Y": {
+          "hide_name": 1,
+          "bits": [ 390, 391, 392 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:98.13-99.17"
+          }
+        },
+        "$flatten\\fir_core.$0\\x0_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 413, 414, 415, 416 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          }
+        },
+        "$flatten\\fir_core.$0\\x1_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 417, 418, 419, 420 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          }
+        },
+        "$flatten\\fir_core.$0\\x2_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 421, 422, 423, 424 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          }
+        },
+        "$flatten\\fir_core.$0\\x3_reg[3:0]": {
+          "hide_name": 1,
+          "bits": [ 425, 426, 427, 428 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:45.1-65.4"
+          }
+        },
+        "$flatten\\fir_core.$add$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43$79_Y": {
+          "hide_name": 1,
+          "bits": [ 393, 394, 395, 396, 397, 398, 399, 400, 401, 402 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43.12-43.19"
+          }
+        },
+        "$flatten\\fir_core.$add$/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43$80_Y": {
+          "hide_name": 1,
+          "bits": [ 403, 404, 405, 406, 407, 408, 409, 410, 411, 412 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:43.12-43.24"
+          }
+        },
+        "$procmux$102_Y": {
+          "hide_name": 1,
+          "bits": [ 449, 450 ],
+          "attributes": {
+          }
+        },
+        "$procmux$107_Y": {
+          "hide_name": 1,
+          "bits": [ 451 ],
+          "attributes": {
+          }
+        },
+        "$procmux$87_Y": {
+          "hide_name": 1,
+          "bits": [ 452, 453, 454, 455 ],
+          "attributes": {
+          }
+        },
+        "$procmux$92_Y": {
+          "hide_name": 1,
+          "bits": [ 456 ],
+          "attributes": {
+          }
+        },
+        "$procmux$97_Y": {
+          "hide_name": 1,
+          "bits": [ 446, 447, 448 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 23 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:12.11-12.14"
+          }
+        },
+        "controller.state": {
+          "hide_name": 0,
+          "bits": [ 62, 63, 64, 65 ],
+          "attributes": {
+            "hdlname": "controller state",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:15.11-15.16"
+          }
+        },
+        "controller.test_x": {
+          "hide_name": 0,
+          "bits": [ 54, 55, 56, 57 ],
+          "attributes": {
+            "hdlname": "controller test_x",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/diagnostic_controller.v:9.22-9.28"
+          }
+        },
+        "diag_busy": {
+          "hide_name": 0,
+          "bits": [ 46 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:24.12-24.21"
+          }
+        },
+        "diag_done": {
+          "hide_name": 0,
+          "bits": [ 47 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:25.12-25.21"
+          }
+        },
+        "diag_done_d": {
+          "hide_name": 0,
+          "bits": [ 445 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:53.5-53.16"
+          }
+        },
+        "diagnostic.expected_p0": {
+          "hide_name": 0,
+          "bits": [ 122, 123, 124, 125, 126, 127, 128, 129 ],
+          "attributes": {
+            "hdlname": "diagnostic expected_p0",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:34.12-34.23"
+          }
+        },
+        "diagnostic.expected_p1": {
+          "hide_name": 0,
+          "bits": [ 134, 135, 136, 137, 138, 139, 140, 141 ],
+          "attributes": {
+            "hdlname": "diagnostic expected_p1",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:35.12-35.23"
+          }
+        },
+        "diagnostic.expected_p2": {
+          "hide_name": 0,
+          "bits": [ 146, 147, 148, 149, 150, 151, 152, 153 ],
+          "attributes": {
+            "hdlname": "diagnostic expected_p2",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:36.12-36.23"
+          }
+        },
+        "diagnostic.expected_p3": {
+          "hide_name": 0,
+          "bits": [ 158, 159, 160, 161, 162, 163, 164, 165 ],
+          "attributes": {
+            "hdlname": "diagnostic expected_p3",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:37.12-37.23"
+          }
+        },
+        "diagnostic.fault_bit": {
+          "hide_name": 0,
+          "bits": [ 213, 214, 215 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_bit",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:29.18-29.27"
+          }
+        },
+        "diagnostic.fault_detected": {
+          "hide_name": 0,
+          "bits": [ 172 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_detected",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:27.12-27.26"
+          }
+        },
+        "diagnostic.fault_location": {
+          "hide_name": 0,
+          "bits": [ 363, 364 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_location",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:28.18-28.32"
+          }
+        },
+        "diagnostic.fault_p0": {
+          "hide_name": 0,
+          "bits": [ 166 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_p0",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:20.12-20.20"
+          }
+        },
+        "diagnostic.fault_p1": {
+          "hide_name": 0,
+          "bits": [ 167 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_p1",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:21.12-21.20"
+          }
+        },
+        "diagnostic.fault_p2": {
+          "hide_name": 0,
+          "bits": [ 169 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_p2",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:22.12-22.20"
+          }
+        },
+        "diagnostic.fault_p3": {
+          "hide_name": 0,
+          "bits": [ 171 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_p3",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:23.12-23.20"
+          }
+        },
+        "diagnostic.fault_type": {
+          "hide_name": 0,
+          "bits": [ 360 ],
+          "attributes": {
+            "hdlname": "diagnostic fault_type",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:30.12-30.22"
+          }
+        },
+        "diagnostic.mismatch_p0": {
+          "hide_name": 0,
+          "bits": [ 173, 174, 175, 176, 177, 178, 179, 180 ],
+          "attributes": {
+            "hdlname": "diagnostic mismatch_p0",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:39.12-39.23"
+          }
+        },
+        "diagnostic.mismatch_p1": {
+          "hide_name": 0,
+          "bits": [ 181, 182, 183, 184, 185, 186, 187, 188 ],
+          "attributes": {
+            "hdlname": "diagnostic mismatch_p1",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:40.12-40.23"
+          }
+        },
+        "diagnostic.mismatch_p2": {
+          "hide_name": 0,
+          "bits": [ 189, 190, 191, 192, 193, 194, 195, 196 ],
+          "attributes": {
+            "hdlname": "diagnostic mismatch_p2",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:41.12-41.23"
+          }
+        },
+        "diagnostic.mismatch_p3": {
+          "hide_name": 0,
+          "bits": [ 197, 198, 199, 200, 201, 202, 203, 204 ],
+          "attributes": {
+            "hdlname": "diagnostic mismatch_p3",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:42.12-42.23"
+          }
+        },
+        "diagnostic.p0": {
+          "hide_name": 0,
+          "bits": [ 205, 206, 207, 208, 209, 210, 211, 212 ],
+          "attributes": {
+            "hdlname": "diagnostic p0",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:15.17-15.19"
+          }
+        },
+        "diagnostic.p1": {
+          "hide_name": 0,
+          "bits": [ 217, 218, 219, 220, 221, 222, 223, 224 ],
+          "attributes": {
+            "hdlname": "diagnostic p1",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:16.17-16.19"
+          }
+        },
+        "diagnostic.p2": {
+          "hide_name": 0,
+          "bits": [ 226, 227, 228, 229, 230, 231, 232, 233 ],
+          "attributes": {
+            "hdlname": "diagnostic p2",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:17.17-17.19"
+          }
+        },
+        "diagnostic.p3": {
+          "hide_name": 0,
+          "bits": [ 235, 236, 237, 238, 239, 240, 241, 242 ],
+          "attributes": {
+            "hdlname": "diagnostic p3",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:18.17-18.19"
+          }
+        },
+        "diagnostic.selected_actual": {
+          "hide_name": 0,
+          "bits": [ 116 ],
+          "attributes": {
+            "hdlname": "diagnostic selected_actual",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:45.6-45.21"
+          }
+        },
+        "diagnostic.selected_expected": {
+          "hide_name": 0,
+          "bits": [ 244, 245, 246, 247, 248, 249, 250, 251 ],
+          "attributes": {
+            "hdlname": "diagnostic selected_expected",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:44.12-44.29"
+          }
+        },
+        "diagnostic.x0": {
+          "hide_name": 0,
+          "bits": [ 118, 119, 120, 121 ],
+          "attributes": {
+            "hdlname": "diagnostic x0",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:10.17-10.19"
+          }
+        },
+        "diagnostic.x1": {
+          "hide_name": 0,
+          "bits": [ 130, 131, 132, 133 ],
+          "attributes": {
+            "hdlname": "diagnostic x1",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:11.17-11.19"
+          }
+        },
+        "diagnostic.x2": {
+          "hide_name": 0,
+          "bits": [ 142, 143, 144, 145 ],
+          "attributes": {
+            "hdlname": "diagnostic x2",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:12.17-12.19"
+          }
+        },
+        "diagnostic.x3": {
+          "hide_name": 0,
+          "bits": [ 154, 155, 156, 157 ],
+          "attributes": {
+            "hdlname": "diagnostic x3",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir_diagnostic.v:13.17-13.19"
+          }
+        },
+        "fault_bit": {
+          "hide_name": 0,
+          "bits": [ 38, 39, 40 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:20.18-20.27"
+          }
+        },
+        "fault_detected": {
+          "hide_name": 0,
+          "bits": [ 35 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:18.12-18.26"
+          }
+        },
+        "fault_location": {
+          "hide_name": 0,
+          "bits": [ 36, 37 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:19.18-19.32"
+          }
+        },
+        "fault_type": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:21.12-21.22"
+          }
+        },
+        "fault_vector": {
+          "hide_name": 0,
+          "bits": [ 42, 43, 44, 45 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:22.18-22.30"
+          }
+        },
+        "fir_core.x": {
+          "hide_name": 0,
+          "bits": [ 429, 430, 431, 432 ],
+          "attributes": {
+            "hdlname": "fir_core x",
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/fir.v:5.17-5.18"
+          }
+        },
+        "h0": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:6.17-6.19"
+          }
+        },
+        "h1": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:7.17-7.19"
+          }
+        },
+        "h2": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:8.17-8.19"
+          }
+        },
+        "h3": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:9.17-9.19"
+          }
+        },
+        "rst": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:11.11-11.14"
+          }
+        },
+        "start_diag": {
+          "hide_name": 0,
+          "bits": [ 24 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:14.11-14.21"
+          }
+        },
+        "x": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:4.17-4.18"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 ],
+          "attributes": {
+            "src": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/rtl/self_diagnosing_fir.v:16.18-16.19"
+          }
+        }
+      }
+    }
+  }
+}

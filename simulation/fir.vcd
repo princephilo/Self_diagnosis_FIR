@@ -1,0 +1,363 @@
+$date
+	Sat Sep 19 15:10:15 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module fir_tb $end
+$var wire 8 ! p0 [7:0] $end
+$var wire 8 " p1 [7:0] $end
+$var wire 8 # p2 [7:0] $end
+$var wire 8 $ p3 [7:0] $end
+$var wire 4 % x1 [3:0] $end
+$var wire 4 & x2 [3:0] $end
+$var wire 4 ' x3 [3:0] $end
+$var wire 10 ( y [9:0] $end
+$var wire 4 ) x0 [3:0] $end
+$var wire 2 * fault_type [1:0] $end
+$var wire 1 + fault_p3 $end
+$var wire 1 , fault_p2 $end
+$var wire 1 - fault_p1 $end
+$var wire 1 . fault_p0 $end
+$var wire 2 / fault_location [1:0] $end
+$var wire 1 0 fault_detected $end
+$var wire 8 1 expected_p3 [7:0] $end
+$var wire 8 2 expected_p2 [7:0] $end
+$var wire 8 3 expected_p1 [7:0] $end
+$var wire 8 4 expected_p0 [7:0] $end
+$var reg 1 5 clk $end
+$var reg 4 6 h0 [3:0] $end
+$var reg 4 7 h1 [3:0] $end
+$var reg 4 8 h2 [3:0] $end
+$var reg 4 9 h3 [3:0] $end
+$var reg 1 : rst $end
+$var reg 4 ; x [3:0] $end
+$scope module d1 $end
+$var wire 1 0 fault_detected $end
+$var wire 4 < h0 [3:0] $end
+$var wire 4 = h1 [3:0] $end
+$var wire 4 > h2 [3:0] $end
+$var wire 4 ? h3 [3:0] $end
+$var wire 8 @ mismatch_p0 [7:0] $end
+$var wire 8 A mismatch_p1 [7:0] $end
+$var wire 8 B mismatch_p2 [7:0] $end
+$var wire 8 C mismatch_p3 [7:0] $end
+$var wire 8 D p0 [7:0] $end
+$var wire 8 E p1 [7:0] $end
+$var wire 8 F p2 [7:0] $end
+$var wire 8 G p3 [7:0] $end
+$var wire 4 H x1 [3:0] $end
+$var wire 4 I x2 [3:0] $end
+$var wire 4 J x3 [3:0] $end
+$var wire 4 K x0 [3:0] $end
+$var wire 8 L selected_expected [7:0] $end
+$var wire 1 M selected_actual $end
+$var wire 4 N fault_vector [3:0] $end
+$var wire 1 O fault_type $end
+$var wire 1 + fault_p3 $end
+$var wire 1 , fault_p2 $end
+$var wire 1 - fault_p1 $end
+$var wire 1 . fault_p0 $end
+$var wire 2 P fault_location [1:0] $end
+$var wire 3 Q fault_bit [2:0] $end
+$var wire 8 R expected_p3 [7:0] $end
+$var wire 8 S expected_p2 [7:0] $end
+$var wire 8 T expected_p1 [7:0] $end
+$var wire 8 U expected_p0 [7:0] $end
+$upscope $end
+$scope module f1 $end
+$var wire 1 5 clk $end
+$var wire 4 V h0 [3:0] $end
+$var wire 4 W h1 [3:0] $end
+$var wire 4 X h2 [3:0] $end
+$var wire 4 Y h3 [3:0] $end
+$var wire 8 Z p0 [7:0] $end
+$var wire 1 : rst $end
+$var wire 4 [ x [3:0] $end
+$var wire 10 \ y [9:0] $end
+$var wire 8 ] p3 [7:0] $end
+$var wire 8 ^ p2 [7:0] $end
+$var wire 8 _ p1 [7:0] $end
+$var reg 4 ` x0 [3:0] $end
+$var reg 4 a x1 [3:0] $end
+$var reg 4 b x2 [3:0] $end
+$var reg 4 c x3 [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx c
+bx b
+bx a
+bx `
+bx _
+bx ^
+bx ]
+bx \
+b0 [
+b0 Z
+b1 Y
+b10 X
+b10 W
+b1 V
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+xO
+bx N
+xM
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+b0 D
+bx C
+bx B
+bx A
+bx @
+b1 ?
+b10 >
+b10 =
+b1 <
+b0 ;
+1:
+b1 9
+b10 8
+b10 7
+b1 6
+05
+bx 4
+bx 3
+bx 2
+bx 1
+x0
+bx /
+x.
+x-
+x,
+x+
+b0x *
+bx )
+bx (
+bx '
+bx &
+bx %
+bx $
+bx #
+bx "
+b0 !
+$end
+#50
+b0 /
+b0 P
+b0 Q
+0M
+b0 L
+b0 *
+0O
+00
+b0 N
+b0 (
+b0 \
+0+
+b0 C
+0,
+b0 B
+0-
+b0 A
+0.
+b0 @
+b0 $
+b0 G
+b0 ]
+b0 1
+b0 R
+b0 #
+b0 F
+b0 ^
+b0 2
+b0 S
+b0 "
+b0 E
+b0 _
+b0 3
+b0 T
+b0 U
+b0 4
+b0 '
+b0 J
+b0 c
+b0 &
+b0 I
+b0 b
+b0 %
+b0 H
+b0 a
+b0 )
+b0 K
+b0 `
+15
+#100
+05
+0:
+#125
+b1 ;
+b1 [
+#150
+10
+b1 N
+b1 L
+1.
+b1 @
+b1 U
+b1 4
+b1 )
+b1 K
+b1 `
+15
+#200
+05
+#225
+b10 ;
+b10 [
+#250
+b1 Q
+b10 (
+b10 \
+b10 L
+b10 @
+b10 "
+b10 E
+b10 _
+b10 3
+b10 T
+b10 U
+b10 4
+b1 %
+b1 H
+b1 a
+b10 )
+b10 K
+b10 `
+15
+#300
+05
+#325
+b11 ;
+b11 [
+#350
+b0 Q
+b110 (
+b110 \
+b11 L
+b11 @
+b10 #
+b10 F
+b10 ^
+b10 2
+b10 S
+b100 "
+b100 E
+b100 _
+b100 3
+b100 T
+b11 U
+b11 4
+b1 &
+b1 I
+b1 b
+b10 %
+b10 H
+b10 a
+b11 )
+b11 K
+b11 `
+15
+#400
+05
+#425
+b100 ;
+b100 [
+#450
+b10 Q
+b1011 (
+b1011 \
+b100 L
+b100 @
+b1 $
+b1 G
+b1 ]
+b1 1
+b1 R
+b100 #
+b100 F
+b100 ^
+b100 2
+b100 S
+b110 "
+b110 E
+b110 _
+b110 3
+b110 T
+b100 U
+b100 4
+b1 '
+b1 J
+b1 c
+b10 &
+b10 I
+b10 b
+b11 %
+b11 H
+b11 a
+b100 )
+b100 K
+b100 `
+15
+#500
+05
+#550
+b10000 (
+b10000 \
+b10 $
+b10 G
+b10 ]
+b10 1
+b10 R
+b110 #
+b110 F
+b110 ^
+b110 2
+b110 S
+b1000 "
+b1000 E
+b1000 _
+b1000 3
+b1000 T
+b10 '
+b10 J
+b10 c
+b11 &
+b11 I
+b11 b
+b100 %
+b100 H
+b100 a
+15
+#600
+05
+#625

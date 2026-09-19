@@ -1,0 +1,25 @@
+// DESCRIPTION: Verilator output: Waivers generated with --waiver-output
+
+`verilator_config
+
+// Below are suggested waivers. You have three options:
+//   1. Fix the reason for the linter warning in the Verilog sources
+//   2. Keep the waiver permanently if you are sure it is okay
+//   3. Keep the waiver temporarily to suppress the output
+
+// lint_off -rule PINCONNECTEMPTY -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v" -match "Instance pin connected by name with empty reference: 'fault_p0'*"
+
+// lint_off -rule PINCONNECTEMPTY -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v" -match "Instance pin connected by name with empty reference: 'fault_p1'*"
+
+// lint_off -rule PINCONNECTEMPTY -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v" -match "Instance pin connected by name with empty reference: 'fault_p2'*"
+
+// lint_off -rule PINCONNECTEMPTY -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v" -match "Instance pin connected by name with empty reference: 'fault_p3'*"
+
+// lint_off -rule WIDTHEXPAND -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v" -match "Operator ADD expects 10 bits on the LHS, but LHS's VARREF 'p0' generates 8 bits.*"
+
+// lint_off -rule WIDTHEXPAND -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v" -match "Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'p1' generates 8 bits.*"
+
+// lint_off -rule WIDTHEXPAND -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v" -match "Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'p2' generates 8 bits.*"
+
+// lint_off -rule WIDTHEXPAND -file "*/Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v" -match "Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'p3' generates 8 bits.*"
+

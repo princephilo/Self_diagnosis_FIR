@@ -1,0 +1,41 @@
+134. Printing statistics.
+
+=== self_diagnosing_fir ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      487 wires
+      548 wire bits
+       23 public wires
+       82 public wire bits
+       16 ports
+       46 port bits
+      512 cells
+      133   $_ANDNOT_
+       67   $_AND_
+       12   $_DFF_P_
+        3   $_MUX_
+       25   $_NAND_
+       20   $_NOR_
+       14   $_NOT_
+       15   $_ORNOT_
+       64   $_OR_
+        1   $_SDFFE_PP0N_
+       20   $_SDFF_PP0_
+       47   $_XNOR_
+       91   $_XOR_
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_DFF_P_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_SDFFE_PP0N_ is unknown!
+   Area for cell type $_SDFF_PP0_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+

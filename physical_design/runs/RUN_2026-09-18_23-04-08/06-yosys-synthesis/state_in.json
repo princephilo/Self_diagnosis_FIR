@@ -1,0 +1,9 @@
+{
+    "json_h": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/physical_design/runs/RUN_2026-09-18_23-04-08/05-yosys-jsonheader/self_diagnosing_fir.h.json",
+    "metrics": {
+        "design__lint_error__count": 0,
+        "design__lint_timing_construct__count": 0,
+        "design__lint_warning__count": 454,
+        "design__inferred_latch__count": 0
+    }
+}

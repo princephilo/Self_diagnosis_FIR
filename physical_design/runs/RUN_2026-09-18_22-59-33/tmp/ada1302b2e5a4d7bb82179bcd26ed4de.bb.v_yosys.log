@@ -1,0 +1,16 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.62 (git sha1 7326bb7d6641500ecb285c291a54a662cb1e76cf, clang++ 21.1.2 -fPIC -O3)
+
+-- Running command `
+                    verilog_defines -DUSE_POWER_PINS;
+read_verilog -sv -lib /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-59-33/tmp/ada1302b2e5a4d7bb82179bcd26ed4de.bb.v;
+
+                    blackbox;
+                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-59-33/tmp/ada1302b2e5a4d7bb82179bcd26ed4de.bb.v;
+                    ' --
+ERROR: File `/Users/balliprincephilomon/Prince/Self' not found or is a directory

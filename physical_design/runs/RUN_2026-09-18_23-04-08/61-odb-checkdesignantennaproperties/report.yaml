@@ -1,0 +1,15 @@
+- cell: self_diagnosing_fir
+  inout: []
+  input: []
+  output:
+  - fault_bit[0]
+  - fault_bit[1]
+  - fault_bit[2]
+  - fault_detected
+  - fault_location[0]
+  - fault_location[1]
+  - fault_type
+  - fault_vector[0]
+  - fault_vector[1]
+  - fault_vector[2]
+  - fault_vector[3]

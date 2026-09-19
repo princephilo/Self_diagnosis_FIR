@@ -1,0 +1,22 @@
+Starting…
+Running 'Verilator.Lint' at 'physical_design/runs/RUN_2026-09-18_22-50-04/01-verilator-lint'…
+Failed to pre-process input models for linting with Yosys: Command '['/opt/homebrew/bin/yosys', '-p', '\n                    verilog_defines -DUSE_POWER_PINS;\nread_verilog -sv -lib /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-50-04/tmp/73bef68179c5487d96971bbde93bf421.bb.v;\n\n                    blackbox;\n                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-50-04/tmp/73bef68179c5487d96971bbde93bf421.bb.v;\n                    ']' returned non-zero exit status 1.
+ERROR: File `/Users/balliprincephilomon/Prince/Self' not found or is a directory
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69+post (git sha1 143eb14f9cc55d6f8927e68523b0c9d2166ed02c, Release, AppleClang clang++ 21.0.0.21000101)
+
+-- Running command `
+                    verilog_defines -DUSE_POWER_PINS;
+read_verilog -sv -lib /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-50-04/tmp/73bef68179c5487d96971bbde93bf421.bb.v;
+
+                    blackbox;
+                    write_verilog -noattr -noexpr -nohex -nodec -defparam -blackboxes /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-50-04/tmp/73bef68179c5487d96971bbde93bf421.bb.v;
+                    ' --
+
+Will attempt to load models into linter as-is.
+Logging subprocess to [repr.filename]'physical_design/runs/RUN_2026-09-18_22-50-04/01-verilator-lint/verilator-lint.log'[/repr.filename]…

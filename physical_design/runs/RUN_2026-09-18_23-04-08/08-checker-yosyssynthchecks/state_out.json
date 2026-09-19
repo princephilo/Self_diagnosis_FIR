@@ -1,0 +1,14 @@
+{
+    "json_h": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/physical_design/runs/RUN_2026-09-18_23-04-08/05-yosys-jsonheader/self_diagnosing_fir.h.json",
+    "nl": "/Users/balliprincephilomon/Prince/Self_diagnosis_FIR/physical_design/runs/RUN_2026-09-18_23-04-08/06-yosys-synthesis/self_diagnosing_fir.nl.v",
+    "metrics": {
+        "design__lint_error__count": 0,
+        "design__lint_timing_construct__count": 0,
+        "design__lint_warning__count": 454,
+        "design__inferred_latch__count": 0,
+        "design__instance__count": 423,
+        "design__instance__area": 4426.7456,
+        "design__instance_unmapped__count": 0,
+        "synthesis__check_error__count": 0
+    }
+}

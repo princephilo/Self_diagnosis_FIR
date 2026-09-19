@@ -1,0 +1,39 @@
+[WARNING ORD-0039] .openroad ignored with -python
+Unannotated report:
+['report_parasitic_annotation -report_unannotated\n',
+ '============================================================================\n',
+ 'Found 14 unannotated drivers.\n',
+ ' clkload0/X\n',
+ ' clkload1/X\n',
+ ' clkload2/X\n',
+ ' self_diagnosing_fir/HI\n',
+ ' self_diagnosing_fir_39/HI\n',
+ ' self_diagnosing_fir_40/HI\n',
+ ' self_diagnosing_fir_41/HI\n',
+ ' self_diagnosing_fir_42/HI\n',
+ ' self_diagnosing_fir_43/HI\n',
+ ' self_diagnosing_fir_44/HI\n',
+ ' self_diagnosing_fir_45/HI\n',
+ ' self_diagnosing_fir_46/HI\n',
+ ' self_diagnosing_fir_47/HI\n',
+ ' self_diagnosing_fir_48/HI\n',
+ 'Found 0 partially unannotated drivers.\n',
+ '\n']
+Reported nets:
+['clkload0/X',
+ 'clkload1/X',
+ 'clkload2/X',
+ 'self_diagnosing_fir/HI',
+ 'self_diagnosing_fir_39/HI',
+ 'self_diagnosing_fir_40/HI',
+ 'self_diagnosing_fir_41/HI',
+ 'self_diagnosing_fir_42/HI',
+ 'self_diagnosing_fir_43/HI',
+ 'self_diagnosing_fir_44/HI',
+ 'self_diagnosing_fir_45/HI',
+ 'self_diagnosing_fir_46/HI',
+ 'self_diagnosing_fir_47/HI',
+ 'self_diagnosing_fir_48/HI']
+Filtered nets:
+[]
+done

@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-59-33/tmp/ada1302b2e5a4d7bb82179bcd26ed4de.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-59-33/tmp/ada1302b2e5a4d7bb82179bcd26ed4de.bb.v"

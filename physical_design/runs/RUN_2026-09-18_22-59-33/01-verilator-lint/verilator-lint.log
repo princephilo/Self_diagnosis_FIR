@@ -1,0 +1,5 @@
+%Error: /Users/balliprincephilomon/Prince/Self diagnosis FIR/physical_design/runs/RUN_2026-09-18_22-59-33/tmp/ada1302b2e5a4d7bb82179bcd26ed4de.bb.v:2013:40: Can't resolve module reference: 'sky130_fd_sc_hd__udp_pwrgood_pp$PG'
+ 2013 |     sky130_fd_sc_hd__udp_pwrgood_pp$PG pwrgood_pp0 (pwrgood_pp0_out_X, or0_out_X, VPWR, VGND);
+      |                                        ^~~~~~~~~~~
+        ... See the manual at https://verilator.org/verilator_doc.html?v=5.044 for more assistance.
+%Error: Exiting due to 1 error(s)

@@ -1,0 +1,35 @@
+%Warning-PINCONNECTEMPTY: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v:105:6: Instance pin connected by name with empty reference: 'fault_p0'
+  105 |     .fault_p0(),
+      |      ^~~~~~~~
+                          ... For warning description see https://verilator.org/warn/PINCONNECTEMPTY?v=5.052
+                          ... Use "/* verilator lint_off PINCONNECTEMPTY */" and lint_on around source to disable this message.
+%Warning-PINCONNECTEMPTY: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v:106:6: Instance pin connected by name with empty reference: 'fault_p1'
+  106 |     .fault_p1(),
+      |      ^~~~~~~~
+%Warning-PINCONNECTEMPTY: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v:107:6: Instance pin connected by name with empty reference: 'fault_p2'
+  107 |     .fault_p2(),
+      |      ^~~~~~~~
+%Warning-PINCONNECTEMPTY: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/self_diagnosing_fir.v:108:6: Instance pin connected by name with empty reference: 'fault_p3'
+  108 |     .fault_p3(),
+      |      ^~~~~~~~
+%Warning-WIDTHEXPAND: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v:43:15: Operator ADD expects 10 bits on the LHS, but LHS's VARREF 'p0' generates 8 bits.
+                                                                                          : ... note: In instance 'self_diagnosing_fir.fir_core'
+   43 | assign y = p0 + p1 + p2 + p3;
+      |               ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.052
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v:43:15: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'p1' generates 8 bits.
+                                                                                          : ... note: In instance 'self_diagnosing_fir.fir_core'
+   43 | assign y = p0 + p1 + p2 + p3;
+      |               ^
+%Warning-WIDTHEXPAND: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v:43:20: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'p2' generates 8 bits.
+                                                                                          : ... note: In instance 'self_diagnosing_fir.fir_core'
+   43 | assign y = p0 + p1 + p2 + p3;
+      |                    ^
+%Warning-WIDTHEXPAND: /Users/balliprincephilomon/Prince/Self diagnosis FIR/rtl/fir.v:43:25: Operator ADD expects 10 bits on the RHS, but RHS's VARREF 'p3' generates 8 bits.
+                                                                                          : ... note: In instance 'self_diagnosing_fir.fir_core'
+   43 | assign y = p0 + p1 + p2 + p3;
+      |                         ^
+- V e r i l a t i o n   R e p o r t: Verilator 5.052 2026-09-05 rev vUNKNOWN-built20260905
+- Verilator: Built from 50.724 MB sources in 466 modules, into 0.034 MB in 3 C++ files needing 0.000 MB
+- Verilator: Walltime 0.225 s (elab=0.009, cvt=0.004, bld=0.000); cpu 0.224 s on 1 threads; allocated 73.500 MB

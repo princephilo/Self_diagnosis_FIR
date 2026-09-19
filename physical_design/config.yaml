@@ -1,0 +1,10 @@
+DESIGN_NAME: self_diagnosing_fir
+
+VERILOG_FILES:
+  - dir::../rtl/fir.v
+  - dir::../rtl/fir_diagnostic.v
+  - dir::../rtl/diagnostic_controller.v
+  - dir::../rtl/self_diagnosing_fir.v
+
+CLOCK_PORT: clk
+CLOCK_PERIOD: 10
