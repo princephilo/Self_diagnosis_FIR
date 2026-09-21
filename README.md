@@ -84,12 +84,17 @@ gtkwave simulation/complete_self_diagnosis.vcd
 
 ---
 
-## 🎨 Physical Design & ASIC Flow (Synthesis, PnR & GDSII)
+## 🎨 Physical Design & ASIC Flow (Synthesis, Cadence Innovus / PnR & GDSII)
 
-The physical implementation of `self_diagnosing_fir` was generated using **LibreLane / OpenLane 2** on the **SkyWater 130nm PDK** (`sky130_fd_sc_hd`).
+The physical implementation of `self_diagnosing_fir` follows a full ASIC implementation flow utilizing **Cadence Genus** for RTL logic synthesis and **Cadence Innovus / LibreLane (OpenLane 2)** for physical placement, routing, STA, and sign-off GDSII generation on the **SkyWater 130nm PDK** (`sky130_fd_sc_hd`).
 
-### Layout Screenshot & Standard Cell Placement
-The placed and routed GDSII layout visualization is saved at [`final_results/self_diagnosing_fir.png`](file:///Users/balliprincephilomon/Prince/Self_diagnosis_FIR/final_results/self_diagnosing_fir.png).
+### 1. Gate-Level Logic Synthesis Schematic (Cadence Genus / RTL Synthesis)
+Logic elaboration, gate mapping, and timing optimization are driven by [`genus/synth.tcl`](file:///Users/balliprincephilomon/Prince/Self_diagnosis_FIR/genus/synth.tcl). Below is the structural logic synthesis schematic diagram for the top-level self-diagnosing FIR macro:
+
+![Cadence Genus Synthesis Schematic](genus/schematic.png)
+
+### 2. Cadence Innovus / Physical Design & Layout Screenshot
+The physical floorplanning, placement, clock tree synthesis (CTS), and routing results are saved at [`final_results/self_diagnosing_fir.png`](file:///Users/balliprincephilomon/Prince/Self_diagnosis_FIR/final_results/self_diagnosing_fir.png):
 
 ![Self-Diagnosing FIR GDSII Layout](final_results/self_diagnosing_fir.png)
 
@@ -137,7 +142,11 @@ Summary of synthesis, timing, power, and physical verification metrics ([`final_
 │   ├── complete_self_diagnosis.vcd
 │   ├── bit_fault.vcd
 │   └── fir.vcd
-├── physical_design/              # OpenLane / LibreLane ASIC flow scripts
+├── genus/                        # Cadence Genus Synthesis Scripts & Schematics
+│   ├── synth.tcl                 # Cadence Genus TCL synthesis script
+│   ├── schematic.png             # Elaboration & gate-level synthesis schematic image
+│   └── schematic.dot             # Graphviz DOT schematic representation
+├── physical_design/              # OpenLane / Cadence Innovus & LibreLane Flow Scripts
 │   ├── config.yaml               # Flow configuration parameters
 │   └── runs/                     # EDA synthesis and PnR run artifacts
 └── final_results/                # Final Tapeout & Sign-off Artifacts
