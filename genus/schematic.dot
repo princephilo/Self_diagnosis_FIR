@@ -2,6 +2,10 @@ digraph "diagnostic_controller" {
 label="diagnostic_controller";
 rankdir="LR";
 remincross=true;
+splines="ortho";
+nodesep=0.8;
+ranksep=1.5;
+concentrate=true;
 n29 [ shape=octagon, label="clk", color="black", fontcolor="black"];
 n30 [ shape=octagon, label="diag_busy", color="black", fontcolor="black"];
 n31 [ shape=octagon, label="diag_done", color="black", fontcolor="black"];
