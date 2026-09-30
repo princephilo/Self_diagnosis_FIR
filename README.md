@@ -91,7 +91,7 @@ The physical implementation of `self_diagnosing_fir` follows a full ASIC impleme
 ### 1. Gate-Level Logic Synthesis Schematic (Cadence Genus / RTL Synthesis)
 Logic elaboration, gate mapping, and timing optimization are driven by [`genus/synth.tcl`](file:///Users/balliprincephilomon/Prince/Self_diagnosis_FIR/genus/synth.tcl). Below is the structural logic synthesis schematic diagram for the top-level self-diagnosing FIR macro:
 
-![Cadence Genus Synthesis Schematic](genus/schematic.png)
+![Cadence Genus Synthesis Schematic](genus/schematic_neat.png)
 
 ### 2. Cadence Innovus / Physical Design & Layout Screenshot
 The physical floorplanning, placement, clock tree synthesis (CTS), and routing results are saved at [`final_results/self_diagnosing_fir.png`](file:///Users/balliprincephilomon/Prince/Self_diagnosis_FIR/final_results/self_diagnosing_fir.png):
@@ -144,7 +144,7 @@ Summary of synthesis, timing, power, and physical verification metrics ([`final_
 │   └── fir.vcd
 ├── genus/                        # Cadence Genus Synthesis Scripts & Schematics
 │   ├── synth.tcl                 # Cadence Genus TCL synthesis script
-│   ├── schematic.png             # Elaboration & gate-level synthesis schematic image
+│   ├── schematic_neat.png        # Elaboration & gate-level synthesis schematic image
 │   └── schematic.dot             # Graphviz DOT schematic representation
 ├── physical_design/              # OpenLane / Cadence Innovus & LibreLane Flow Scripts
 │   ├── config.yaml               # Flow configuration parameters
